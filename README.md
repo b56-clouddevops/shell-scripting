@@ -6,5 +6,5 @@ All the coding standards are close to best coding standards followed by all the 
 In this repo, we start everything from bascis and follows sequential order.
 
 ```
-Shell is native to linux and had better native advantage with better performance
+Shell is native to linux and had better native advantage with better performance.
 ```
