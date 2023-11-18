@@ -9,10 +9,12 @@
 
 # Apart from first line if you see anyline that starts with # that's referred as a comment. 
 
-
 echo Welcome To Shell Scripting
 echo "This is day 1 of our shell scripting"
 
 echo Line1
 echo Line2
 echo Line3 
+
+echo Line4
+echo Line5
