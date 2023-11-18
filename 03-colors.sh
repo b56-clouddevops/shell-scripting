@@ -9,3 +9,14 @@
 # Blue              34                  44
 # Magenta           35                  45
 # Cyan              36                  46
+
+
+# Syntax to Print COLORS is : 
+
+#  echo -e "\e[COLORCODEm I am printing Red color \e[0m"
+
+echo -e "\e[31m I am printing Red color \e[0m"
+echo -e "\e[32m I am printing GREEN color \e[0m"
+echo -e "\e[33m I am printing YELLOW color \e[0m"
+echo -e "\e[34m I am printing BLUE color \e[0m"
+echo -e "\e[35m I am printing MAGENTA color \e[0m"
