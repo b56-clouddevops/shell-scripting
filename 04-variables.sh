@@ -5,6 +5,7 @@
 
 # the advantage & disadvantage in shell is that there are no Data Types
 
+# Declaring the values of the variables
 a=10 
 b=abc 
 # In bash, everything will be considered as string by default.
@@ -16,3 +17,5 @@ echo printing the value of a $a
 echo printing the value of a ${a} 
 
 echo printing the value of b ${b}
+
+echo "Prining the value of c $c"
