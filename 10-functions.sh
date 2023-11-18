@@ -11,9 +11,9 @@
 
 # How to declare a function ?
 
-# f() {
-#     echo hai
-# }
+f() {
+    echo hai
+}
 
 # How do you call a function 
 
@@ -52,3 +52,5 @@ stat() {
 
     b56  # calling a function from another function
 }
+
+stat 
