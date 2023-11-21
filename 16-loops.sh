@@ -9,7 +9,7 @@
 # for loop syntaxt 
 
 echo Value is 10
-echo Value is20 
-echo Value is30
+echo Value is 20 
+echo Value is 30
 echo Value is 40
 echo Value is 50 
