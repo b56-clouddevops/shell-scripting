@@ -8,10 +8,10 @@ if [ $UID -ne 0 ] ; then
     exit 1 
 fi 
 
-echo -e "***** \e[35m Configuring frontend \e[0m ******"
+echo -e "***** \e[35m Configuring $1 \e[0m ******"
 
 echo "Installing Nginx :"
-yum install nginx -y
+yum install nginx -y      > /tmp/$1.log
 
 
 # systemctl enable nginx
