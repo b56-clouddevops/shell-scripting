@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Configuring frontend"
+echo -e "***** \e[35m Configuring frontend \e[0m ******"
