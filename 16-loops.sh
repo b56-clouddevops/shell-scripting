@@ -8,8 +8,8 @@
 
 # for loop syntaxt 
 
-echo 10
-echo 20 
-echo 30
-echo 40
-echo 50 
+echo Value is 10
+echo Value is20 
+echo Value is30
+echo Value is 40
+echo Value is 50 
