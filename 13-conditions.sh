@@ -10,6 +10,7 @@
 #     opt2) commans-y ;; 
 # esac
 
+ACTION=$1                          # $1 refers first command line argument
 
 case $ACTION in 
     start) 
