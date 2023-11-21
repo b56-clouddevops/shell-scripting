@@ -11,4 +11,4 @@ a=100
 b=300
 echo $a
 COMMENT
-echo $b 
+echo "Value of b is $b"
