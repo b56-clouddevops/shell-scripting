@@ -23,9 +23,10 @@ case $ACTION in
         ;;
     restart) 
         echo -e "\e[33m Restarting Shipping Service \e[0m"
-        exit 3
+        exit 2
         ;;
     *)
         echo -e "\e[35m Valid Options are start or stop or restart only \e[0m"
         echo -e "\e[33m  Example Usage: \e[0m \n\t\t bash script.sh start"
+        exit 3
 esac 
