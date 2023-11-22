@@ -33,5 +33,5 @@ if [ $? -ne 0 ] ; then
   useradd $APPUSER 
   stat $?
 else 
-  echo -e "\e[35m Skipping \e[0m"
+  echo -n -e "\e[35m Skipping \e[0m"
 fi 
