@@ -33,7 +33,7 @@ cd /usr/share/nginx/html
 rm -rf *     &>> $LOGFILE
 stat $?
 
-echo -n "Extracting $COMPONENT"
+echo -n "Extracting $COMPONENT :"
 ls -ltr /tmp/
 unzip -o "/tmp/frontend.zip"    &>> $LOGFILE
 stat $?
