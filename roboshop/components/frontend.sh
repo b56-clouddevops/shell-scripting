@@ -30,8 +30,7 @@ ls -ltr /tmp
 stat $?
 
 echo -n "Cleanup of ${COMPONENT} : "
-cd /usr/share/nginx/html/
-# rm -rf *     &>> $LOGFILE
+rm -rf /usr/share/nginx/html/*     &>> $LOGFILE
 stat $?
 
 echo -n "Extracting $COMPONENT :"
