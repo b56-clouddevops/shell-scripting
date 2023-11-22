@@ -18,19 +18,19 @@ if [ $USER_ID -ne 0 ] ; then
     exit 1 
 fi 
 
-echo -e "***** \e[35m Configuring $COMPONENT \e[0m ******"
+echo -e "***** \e[35m Configuring ${COMPONENT} \e[0m ******"
 
 echo -n "Installing Nginx :"
 yum install nginx -y      &>> $LOGFILE
 stat $?
 
-echo -n "Downloading Component $COMPONENT :"
+echo -n "Downloading Component ${COMPONENT} :"
 curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 ls -ltr /tmp
 stat $?
 
-echo -n "Cleanup of $COMPONENT : "
-cd /usr/share/nginx/html 
+echo -n "Cleanup of ${COMPONENT} : "
+cd /usr/share/nginx/html/
 rm -rf *     &>> $LOGFILE
 stat $?
 
