@@ -39,3 +39,5 @@ fi
 
 echo -n "Downloading $COMPONENT :"
 curl -s -L -o /tmp/$COMPONENT.zip $COMPONENT_URL
+stat $? 
+
