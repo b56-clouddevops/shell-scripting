@@ -41,3 +41,6 @@ echo -n "Downloading $COMPONENT :"
 curl -s -L -o /tmp/$COMPONENT.zip $COMPONENT_URL
 stat $? 
 
+echo -n "Extracting $COMPONENT :"
+cd /home/roboshop
+unzip -o /tmp/${COMPONENT}.zip  &>> $LOGFILE
