@@ -35,7 +35,6 @@ stat $?
 
 echo -n "Extracting ${COMPONENT} :"
 unzip -o /tmp/${COMPONENT}.zip    &>> $LOGFILE
-ls -ltr /tmp/${COMPOMENT}
 stat $?
 
 echo -n  "Configuring $COMPONENT :"
