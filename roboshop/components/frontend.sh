@@ -9,7 +9,7 @@ if [ $USER_ID -ne 0 ] ; then
     exit 1 
 fi 
 
-echo -e "***** \e[35m Configuring $1 \e[0m ******"
+echo -e "***** \e[35m Configuring $COMPONENT \e[0m ******"
 
 echo -n "Installing Nginx :"
 yum install nginx -y      &>> /tmp/frontend.log
@@ -19,7 +19,7 @@ else
     echo -e "\e[31m Failure \e[0m"
 fi 
 
-echo -n "Downloading Component $1 :"
+echo -n "Downloading Component $COMPONENT :"
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 if [ $? -eq 0 ] ; then 
     echo -e "\e[32m Success \e[0m"
@@ -44,7 +44,7 @@ else
     echo -e "\e[31m Failure \e[0m"
 fi 
 
-echo -n  "Configuring $1 :"
+echo -n  "Configuring $COMPONENT :"
 mv frontend-main/* .
 mv static/* .
 rm -rf frontend-main README.md
@@ -68,4 +68,4 @@ else
 fi 
 
 
-echo -e "***** \e[35m $1 Configuration Is Complted \e[0m ******"
+echo -e "***** \e[35m $COMPONENT Configuration Is Complted \e[0m ******"
