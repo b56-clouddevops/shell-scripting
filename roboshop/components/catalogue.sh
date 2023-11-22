@@ -5,6 +5,7 @@ COMPONENT=catalogue
 COMPONENT_URL="https://github.com/stans-robot-project/$COMPONENT/archive/main.zip"
 LOGFILE="/tmp/${COMPONENT}.log"
 APPUSER="roboshop"
+APPUSER_HOME="/home/${APPUSER}/${COMPONENT}"
 
 stat() {
     if [ $1 -eq 0 ] ; then 
@@ -47,7 +48,7 @@ unzip -o /tmp/${COMPONENT}.zip  &>> $LOGFILE
 stat $?
 
 echo -n "Configuring $COMPONENT permissions :"
-mv /home/$APPUSER/${COMPONENT}-main /home/${APPUSER}/${COMPONENT}
-chown -R $APPUSER:$APPUSER  /home/${APPUSER}/${COMPONENT}
-chmod -R 770  /home/${APPUSER}/${COMPONENT}
+mv ${APPUSER_HOME}-main $APPUSER_HOME
+chown -R $APPUSER:$APPUSER  $APPUSER_HOME
+chmod -R 770  $APPUSER_HOME
 stat $?
