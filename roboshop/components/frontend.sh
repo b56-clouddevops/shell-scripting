@@ -34,6 +34,8 @@ rm -rf *     &>> $LOGFILE
 stat $?
 
 echo -n "Extracting $COMPONENT :"
+pwd 
+ls -ltr
 unzip -o /tmp/frontend.zip    &>> $LOGFILE
 stat $?
 
