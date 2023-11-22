@@ -36,5 +36,5 @@ stat $?
 echo -n "Starting $COMPONENT :"
 systemctl enable mongo   &>> $LOGFILE
 systemctl daemon-reload  &>> $LOGFILE
-systemctl start mongod  &>> $LOGFILE
+systemctl restart mongod  &>> $LOGFILE
 stat $?
