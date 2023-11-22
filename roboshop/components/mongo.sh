@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USER_ID=$(id -u)
-COMPONENT=mongo
+COMPONENT=mongodb
 LOGFILE="/tmp/${COMPONENT}.log"
 MONGO_REPO="https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo"
 SCHEMA_URL="https://github.com/stans-robot-project/mongodb/archive/main.zip"
@@ -45,7 +45,8 @@ curl -s -L -o /tmp/mongodb.zip $SCHEMA_URL
 stat $? 
 
 echo -n "Extracting $COMPONENT :"
-unzip -o /tmp/mongodb.zip    &>> $LOGFILE
+cd /tmp 
+unzip -o mongodb.zip    &>> $LOGFILE
 stat $? 
 
 echo -n "Injecting Schem :"
