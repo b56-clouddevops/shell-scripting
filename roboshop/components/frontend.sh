@@ -9,7 +9,7 @@ if [ $USER_ID -ne 0 ] ; then
     exit 1 
 fi 
 
-echo -e "***** \e[35m Configuring frontend \e[0m ******"
+echo -e "***** \e[35m Configuring $1 \e[0m ******"
 
 echo -n "Installing Nginx :"
 yum install nginx -y      &>> /tmp/frontend.log
@@ -66,3 +66,6 @@ if [ $? -eq 0 ] ; then
 else 
     echo -e "\e[31m Failure \e[0m"
 fi 
+
+
+echo -e "***** \e[35m $1 Configuration Is Complted \e[0m ******"
