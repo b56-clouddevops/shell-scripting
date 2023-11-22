@@ -45,3 +45,9 @@ echo -n "Extracting $COMPONENT :"
 cd /home/roboshop
 unzip -o /tmp/${COMPONENT}.zip  &>> $LOGFILE
 stat $?
+
+echo -n "Configuring $COMPONENT permissions :"
+mv /home/$APPUSER/${COMPONENT}-main /home/${APPUSER}/${COMPONENT}
+chown -R $APPUSER:$APPUSER  /home/${APPUSER}/${COMPONENT}
+chmod -R 770  /home/${APPUSER}/${COMPONENT}
+stat $?
