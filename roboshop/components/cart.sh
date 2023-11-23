@@ -2,6 +2,8 @@
 
 COMPONENT=cart
 
+source components/common.sh 
+
 echo -n "Configuring Nodejs Repo :"
 curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
 stat $? 
