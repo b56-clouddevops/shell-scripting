@@ -4,6 +4,7 @@ COMPONENT_URL="https://github.com/stans-robot-project/$COMPONENT/archive/main.zi
 APPUSER="roboshop"
 APPUSER_HOME="/home/${APPUSER}/${COMPONENT}"
 USER_ID=$(id -u)
+LOGFILE="/tmp/${COMPONENT}.log"
 
 if [ $USER_ID -ne 0 ] ; then 
     echo -e "\e[31m This script is expected to be executed with sudo or as a root user \e[0m"
