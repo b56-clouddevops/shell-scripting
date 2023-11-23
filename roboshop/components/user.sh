@@ -21,9 +21,9 @@ if [ $USER_ID -ne 0 ] ; then
     exit 1 
 fi 
 
-echo -n "Configuring Nodejs Repo :"
-curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
-stat $? 
+# echo -n "Configuring Nodejs Repo :"
+# curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
+# stat $? 
 
 echo -n "Installing Nodejs :"
 yum install nodejs -y   &>> $LOGFILE
