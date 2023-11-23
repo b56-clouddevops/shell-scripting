@@ -78,7 +78,7 @@ NODEJS() {
 
     echo -n "Configuring Latest Nodejs Repo :"
     # curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
-    yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y || true
+    yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y &>> $LOGFILE || true
     stat $? 
 
     echo -n "Installing Nodejs :"
