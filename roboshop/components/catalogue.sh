@@ -42,6 +42,10 @@ echo -n "Downloading $COMPONENT :"
 curl -s -L -o /tmp/$COMPONENT.zip $COMPONENT_URL
 stat $? 
 
+echo -n "Performing Cleanup of $COMPONENT:"
+rm -rf $APPUSER_HOME &>> $LOGFILE
+stat $?
+
 echo -n "Extracting $COMPONENT :"
 cd /home/roboshop
 unzip -o /tmp/$COMPONENT.zip  &>> $LOGFILE
