@@ -1,7 +1,6 @@
 #!/bin/bash
 
 COMPONENT_URL="https://github.com/stans-robot-project/$COMPONENT/archive/main.zip"
-LOGFILE="/tmp/${COMPONENT}.log"
 APPUSER="roboshop"
 APPUSER_HOME="/home/${APPUSER}/${COMPONENT}"
 USER_ID=$(id -u)

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 COMPONENT=user
+LOGFILE="/tmp/${COMPONENT}.log"
 
 echo -n "Configuring Nodejs Repo :"
 curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -

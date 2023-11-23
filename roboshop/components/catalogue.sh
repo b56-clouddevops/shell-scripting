@@ -1,6 +1,7 @@
 #!/bin/bash
 
 COMPONENT=catalogue
+LOGFILE="/tmp/${COMPONENT}.log"
 
 source components/common.sh 
 
