@@ -76,16 +76,17 @@ START_SVC() {
 
 NODEJS() {
 
-    echo -n "Configuring Nodejs Repo :"
-    curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
+    echo -n "Configuring Latest Nodejs Repo :"
+    # curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
+    yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
     stat $? 
 
     echo -n "Installing Nodejs :"
-    # yum install nodejs -y   &>> $LOGFILE
-    # stat $? 
+    yum install nodejs -y   &>> $LOGFILE
+    #sudo yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1    
+    stat $? 
 
-    sudo yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-    sudo yum install nodejs -y                   # --setopt=nodesource-nodejs.module_hotfixes=1    
+
     stat $?
     CREATE_USER                 # calls create user function that creates user
 
