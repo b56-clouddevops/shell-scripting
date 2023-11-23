@@ -81,9 +81,12 @@ NODEJS() {
     stat $? 
 
     echo -n "Installing Nodejs :"
-    yum install nodejs -y   &>> $LOGFILE
-    stat $? 
+    # yum install nodejs -y   &>> $LOGFILE
+    # stat $? 
 
+    sudo yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
+    sudo yum install nodejs -y                   # --setopt=nodesource-nodejs.module_hotfixes=1    
+    stat $?
     CREATE_USER                 # calls create user function that creates user
 
     DOWNLOAD_AND_EXTRACT 
