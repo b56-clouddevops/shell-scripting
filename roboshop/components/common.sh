@@ -102,9 +102,9 @@ NODEJS() {
 }
 
 JAVA() {
-    
+
     echo -n "Installing Maven:"
-    curl https://gitlab.com/thecloudcareers/opensource/-/raw/master/lab-tools/maven-java11/install.sh | bash  &>> $LOGFILE
+    yum install maven -y | bash  &>> $LOGFILE
     stat $? 
 
     CREATE_USER                 # calls create user function that creates user
@@ -118,4 +118,5 @@ JAVA() {
     stat $?
 
     CONFIG_SVC
+
 }
