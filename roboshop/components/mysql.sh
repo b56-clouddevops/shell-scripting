@@ -38,3 +38,18 @@ if [ $? -eq 0 ]; then
     echo "uninstall plugin validate_password;" | mysql -uroot -pRoboShop@1 &>> $LOGFILE 
     stat $?
 fi 
+
+echo -n "Downloading $COMPONENT Schema:"
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+stat $? 
+
+echo -n "Extracting Schema:"
+unzip -o /tmp/${COMPONENT}.zip  &>> $LOGFILE
+stat $? 
+
+echo -n "Injecting Schema:"
+cd ${COMPONENT}-main 
+mysql -u root -pRoboShop@1 <shipping.sql &>> $LOGFILE
+stat $? 
+
+echo -e "***** \e[35m $COMPONENT Configuration Is Complted \e[0m ******"
