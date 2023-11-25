@@ -14,7 +14,7 @@ stat $?
 
 echo -n "Installing $COMPONENT :"
 yum install mysql-community-server -y &>> $LOGFILE
-state $?
+stat $?
 
 echo -n "Starting $1 :"
 systemctl enable mysqld   &>> $LOGFILE
