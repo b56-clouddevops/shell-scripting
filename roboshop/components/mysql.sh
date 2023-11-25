@@ -31,3 +31,7 @@ if [ $? -ne 0 ]; then
     echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1'" | mysql --connect-expired-password -uroot -p$DEFAULT_ROOT_PASS &>> $LOGFILE
     stat $?
 fi 
+
+echo -n "Uninstalling password-validate-plugin:"
+echo "uninstall plugin validate_password;" | mysql -uroot -pRoboShop@1 &>> $LOGFILE 
+stat $?
