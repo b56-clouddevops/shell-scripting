@@ -114,6 +114,7 @@ JAVA() {
     echo -n "Generating Artifacts :"
  
     cd $COMPONENT
+    pwd
     mvn clean package  &>> $LOGFILE
     mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
     stat $?
