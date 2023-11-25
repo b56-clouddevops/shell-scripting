@@ -26,5 +26,5 @@ DEFAULT_ROOT_PASS=$(sudo grep "temporary password" /var/log/mysqld.log | awk -F 
 stat $?
 
 echo -n "Changing $COMPONENT root passowrd:"
-echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1'" | mysql connect-expired-password -uroot -p$DEFAULT_ROOT_PASS
+echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1'" | mysql --connect-expired-password -uroot -p$DEFAULT_ROOT_PASS
 stat $?
