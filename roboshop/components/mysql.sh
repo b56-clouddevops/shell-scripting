@@ -9,7 +9,7 @@ echo -e "***** \e[35m Configuring ${COMPONENT} \e[0m ******"
 
 
 echo -n "Configuring $COMPONENT repo:" 
-curl -s -L -o /etc/yum.repos.d/mysql.repo $COMPONENT_URL &>> $LOGFILE
+curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/stans-robot-project/mysql/main/mysql.repo
 stat $? 
 
 echo -n "Installing $COMPONENT :"
