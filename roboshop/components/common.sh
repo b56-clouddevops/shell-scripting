@@ -44,7 +44,7 @@ DOWNLOAD_AND_EXTRACT() {
     stat $?
 
     echo -n "Extracting $COMPONENT :"
-    cd /home/roboshop
+    cd /home/${APPUSER}
     unzip -o /tmp/$COMPONENT.zip  &>> $LOGFILE
     stat $?
 
@@ -112,9 +112,8 @@ JAVA() {
     DOWNLOAD_AND_EXTRACT 
     
     echo -n "Generating Artifacts :"
-    # cd $APPUSER_HOME 
-    # cd /home/${APPUSER}/${COMPONENT}/
-    cd /home/roboshop/shipping
+ 
+    cd $COMPONENT
     mvn clean package  &>> $LOGFILE
     mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
     stat $?
