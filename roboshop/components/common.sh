@@ -86,8 +86,6 @@ NODEJS() {
     #sudo yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1    
     stat $? 
 
-
-    stat $?
     CREATE_USER                 # calls create user function that creates user
 
     DOWNLOAD_AND_EXTRACT 
@@ -101,4 +99,19 @@ NODEJS() {
     
     START_SVC
 
+}
+
+JAVA() {
+    echo -n "Installing Maven:"
+    curl https://gitlab.com/thecloudcareers/opensource/-/raw/master/lab-tools/maven-java11/install.sh | bash  &>> $LOGFILE
+    stat $? 
+
+    CREATE_USER                 # calls create user function that creates user
+
+    DOWNLOAD_AND_EXTRACT 
+    
+    echo -n "Generating Artifacts :"
+    cd $APPUSER_HOME 
+    mvn clean package  &>> $LOGFILE
+    mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
 }
