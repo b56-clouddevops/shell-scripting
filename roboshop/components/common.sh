@@ -113,7 +113,8 @@ JAVA() {
     
     echo -n "Generating Artifacts :"
     # cd $APPUSER_HOME 
-    cd /home/${APPUSER}/${COMPONENT}/
+    # cd /home/${APPUSER}/${COMPONENT}/
+    cd /home/roboshop/shipping
     mvn clean package  &>> $LOGFILE
  mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
     stat $?
