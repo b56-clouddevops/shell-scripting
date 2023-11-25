@@ -115,7 +115,7 @@ JAVA() {
     # cd $APPUSER_HOME 
     cd /home/${APPUSER}/${COMPONENT}/
     mvn clean package  &>> $LOGFILE
-    mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
+ mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
     stat $?
 
     CONFIG_SVC
