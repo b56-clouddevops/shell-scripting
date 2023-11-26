@@ -112,8 +112,7 @@ MAVEN() {
     DOWNLOAD_AND_EXTRACT 
     
     echo -n "Generating Artifacts :"
- 
-    cd ${APPUSER_HOME}
+    cd $APPUSER_HOME 
     echo "*** printng pwd ***" 
     pwd
     mvn clean package  &>> $LOGFILE
