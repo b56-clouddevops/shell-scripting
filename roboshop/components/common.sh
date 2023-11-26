@@ -114,6 +114,7 @@ JAVA() {
     echo -n "Generating Artifacts :"
  
     cd ${APPUSER_HOME}
+    echo "*** printng pwd ***" 
     pwd
     mvn clean package  &>> $LOGFILE
     mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
@@ -122,27 +123,4 @@ JAVA() {
     CONFIG_SVC
     
     START_SVC
-}
-
-MAVEN() {
-echo -n "Installing Maven:"
-yum install maven -y  &>> $LOGFILE
-stat $? 
-
-CREATE_USER
-DOWNLOAD_AND_EXTRACT
-
-echo -n "Generating Artifacts :"
-
-cd ${APPUSER_HOME}
-
-mvn clean package  &>> $LOGFILE
-
-mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
-
-stat $?
-
-CONFIG_SVC
-
-START_SVC
 }
