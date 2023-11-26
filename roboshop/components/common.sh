@@ -46,6 +46,7 @@ DOWNLOAD_AND_EXTRACT() {
     echo -n "Extracting $COMPONENT :"
     cd /home/${APPUSER}
     unzip -o /tmp/$COMPONENT.zip  &>> $LOGFILE
+    mv /home/${APPUSER}/${COMPONENT}-main /home/${APPUSER}/{COMPONENT}
     stat $?
 
 }
@@ -53,7 +54,7 @@ DOWNLOAD_AND_EXTRACT() {
 CONFIG_SVC() {
 
     echo -n "Configuring $COMPONENT permissions :"
-    mv ${APPUSER_HOME}-main $APPUSER_HOME
+    # mv ${APPUSER_HOME}-main $APPUSER_HOME
     chown -R $APPUSER:$APPUSER  $APPUSER_HOME
     chmod -R 770  $APPUSER_HOME
     stat $?
