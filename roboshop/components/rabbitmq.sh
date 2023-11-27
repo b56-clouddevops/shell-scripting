@@ -27,7 +27,8 @@ rabbitmqctl add_user roboshop roboshop123  &>> $LOGFILE
 stat $? 
 
 echo -n "Sorting Permissions :"
-rabbitmqctl set_user_tags roboshop administrator
-rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
+rabbitmqctl set_user_tags roboshop administrator       &>> $LOGFILE
+rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"     &>> $LOGFILE
+stat $? 
 
 echo -e "***** \e[35m $COMPONENT Configuration Is Complted \e[0m ******"
