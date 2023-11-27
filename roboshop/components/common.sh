@@ -141,6 +141,12 @@ PYTHON() {
     stat $?
 
     CONFIG_SVC
+
+    USERID=$(id -u roboshop)
+    GROUPID=$(id -g roboshop)
+
+    echo -n "Updating the uid and gid of the ${COMPONENT}.ini file"
+    sed -i -e "/^uid/ c uid=${USERID}" -e "/^gid/ c uid=${GROUPID}"  "${APPUSER_HOME}/${COMPONENT}.ini"
     
     START_SVC
 }
