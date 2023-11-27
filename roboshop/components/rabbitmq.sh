@@ -22,9 +22,12 @@ systemctl enable rabbitmq-server       &>> $LOGFILE
 systemctl start rabbitmq-server        &>> $LOGFILE
 stat $? 
 
-echo -n "Creating $APPUSER for $COMPONENT: "
-rabbitmqctl add_user roboshop roboshop123  &>> $LOGFILE
-stat $? 
+rabbitmqctl list_users | grep ${APPUSER} &>> $LOGFILE
+if [ $? -ne 0 ]; then
+    echo -n "Creating $APPUSER for $COMPONENT: "
+    rabbitmqctl add_user roboshop roboshop123  &>> $LOGFILE
+    stat $? 
+fi 
 
 echo -n "Sorting Permissions :"
 rabbitmqctl set_user_tags roboshop administrator       &>> $LOGFILE
