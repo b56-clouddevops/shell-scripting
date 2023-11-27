@@ -115,12 +115,6 @@ MAVEN() {
     
     echo -n "Generating Artifacts :"
     cd $APPUSER_HOME 
-    echo "*** printng pwd ***" 
-    pwd
-    cd /home/roboshop
-    ls -ltr
-    cd /home/roboshop/shipping
-    ls -ltr
     mvn clean package  &>> $LOGFILE
     mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
     stat $?
