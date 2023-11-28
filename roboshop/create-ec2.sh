@@ -5,6 +5,13 @@
 # AMI_ID="ami-0f75a13ad2e340a58" # Hardcoding is a bad-choice particularly with AMI_ID as it's going be changed when you register a new AMI.
 # SGID="sg-052fd946b7e11841a"
 
+if [ -z $1 ] ; then 
+    echo -e "\e31m ****** COMPONENT NAME IS NEEDED ****** \n\t\t"
+    echo -e "\e[36m Example Usage : \e[0m  bash create-ec2 ratings"
+    exit 1 
+fi 
+
+
 COMPONENT=$1
 HOSTEDZONEID="Z031297333JO38PNHPROR"
 AMI_ID=$(aws ec2 describe-images --filters "Name=name,Values=DevOps-LabImage-CentOS7" | jq ".Images[].ImageId" | sed -e 's/"//g')
@@ -21,3 +28,4 @@ sed -e "s/COMPONENT/${COMPONENT}/" -e "s/IPADDRESS/${PRIVATE_IP}/" route53.json 
 
 aws route53 change-resource-record-sets --hosted-zone-id $HOSTEDZONEID --change-batch file:///tmp/dns.json
 echo -e "******* \e[32m $COMPONENT \e[0m DNS Record Creation Is Complted ******* !!!!!!"
+
