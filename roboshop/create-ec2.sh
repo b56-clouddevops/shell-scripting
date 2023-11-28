@@ -19,7 +19,7 @@ SGID=$(aws ec2 describe-security-groups --filters "Name=group-name,Values=b56-al
 INSTANCE_TYPE="t3.micro"
 
 create_server() {
-    echo -e "******* \e[32m $COMPONENT \e[0m Server Creation In Progress ******* !!!!!!"
+    echo -e "******* \e[32m $COMPONENT-$ENV \e[0m Server Creation In Progress ******* !!!!!!"
 
     PRIVATE_IP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE} --security-group-ids ${SGID} --tag-specifications "ResourceType=instance, Tags=[{Key=Name,Value=${COMPONENT}-${ENV}}]" | jq ".Instances[].PrivateIpAddress" | sed -e 's/"//g')
     echo -e "******* \e[32m $COMPONENT-$ENV \e[0m Server Creation Is Complted ******* !!!!!! \n\n"
@@ -29,7 +29,7 @@ create_server() {
 
     aws route53 change-resource-record-sets --hosted-zone-id $HOSTEDZONEID --change-batch file:///tmp/dns.json\
 
-    echo -e "******* \e[32m $COMPONENT \e[0m DNS Record Creation Is Complted ******* !!!!!! \n\n"
+    echo -e "******* \e[32m $COMPONENT-$ENV \e[0m DNS Record Creation Is Complted ******* !!!!!! \n\n"
 }
 
 # If the user supplies all as the first argument, then all these servers will be created.
