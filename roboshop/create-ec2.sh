@@ -34,9 +34,9 @@ if [ "$1" == "all" ]; then
 
     for component in mongodb catalogue cart user shipping frontend payment mysql redis rabbitmg; do 
         COMPONENT=$component 
-        create_ec2  
+        create_server 
     done 
 
 else 
-    create_ec2 
+    create_server 
 fi 
