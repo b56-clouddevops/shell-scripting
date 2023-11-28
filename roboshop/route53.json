@@ -1,0 +1,11 @@
+{
+    "Comment": "Creates DNS Record",
+    "Changes": [{
+    "Action": "UPSERT",
+                "ResourceRecordSet": {
+                            "Name": "COMPONENT.roboshop.internal",
+                            "Type": "A",
+                            "TTL": 10,
+                         "ResourceRecords": [{ "Value": "IPADDRESS"}]
+}}]
+}
