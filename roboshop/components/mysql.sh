@@ -51,3 +51,4 @@ mysql -u root -pRoboShop@1 <shipping.sql &>> $LOGFILE
 stat $? 
 
 echo -e "***** \e[35m $COMPONENT Configuration Is Complted \e[0m ******"
+set-hostname $COMPONENT
