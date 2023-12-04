@@ -23,5 +23,4 @@ systemctl enable $COMPONENT &>> $LOGFILE
 systemctl restart $COMPONENT &>> $LOGFILE
 stat $?
 
-set-hostname $COMPONENT
 
